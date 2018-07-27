@@ -6,16 +6,43 @@
         </div>
     </div>
     <div class="row">
+        <div class="offset-md-4"></div>
+        <div class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <label for="newBurger">What's your burger?</label>
+                    <textarea class="form-control" id="newBurger" rows="3"></textarea>
+                </div>
+                <button type="button" class="btn btn-success" id="include">Get Grillin!</button>
+            </form>
+        </div>
+        <div class="offset-md-4"></div>
+    </div>
+    <div class="row">
         <div class="col-md-4">
             <h3>Burger Offerings:</h3>
-
+            {{#each burgers}} {{#unless devoured}}
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <p>{{burger_name}}</p>>
+                    <button type="button" class="btn btn-danger" id="devour">Devour It!</button>
+                </div>
+            </div>
+            {{/unless}} {{/each}}
         </div>
         <div class="col-md-4">
 
         </div>
         <div class="col-md-4">
             <h3>Burgers Eaten:</h3>
-
+            {{#each burgers}} {{#if devoured}}
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <p>{{burger_name}}</p>>
+                    <button type="button" class="btn btn-danger" id="devour">Devour It!</button>
+                </div>
+            </div>
+            {{/if}} {{/each}}
         </div>
     </div>
 </div>
