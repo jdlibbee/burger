@@ -55,7 +55,7 @@ var orm = {
         query += col.toString();
         query += `)`;
         query += `values (`;
-        query += printQuestionMarks(val.lenth);
+        query += printQuestionMarks(val.length);
         query += `)`;
 
         console.log(query);
