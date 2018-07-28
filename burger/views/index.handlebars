@@ -1,45 +1,42 @@
 <div class="container">
-    <div class="row">
-        <div class="jumbotron jumbotron-fluid justify-content-center bg-info text-white">
-            <img src="../public/assets/img/burger.png" alt="burger">
-            <h1>Eat Yo Burger!</h1>
-        </div>
+    <div class="jumbotron jumbotron-fluid text-center bg-info text-white">
+        <img src="/assets/img/burger.png" id="burgerImage" alt="Burger">
+        <h1>Eat Yo Burger!</h1>
     </div>
     <div class="row">
         <div class="offset-md-4"></div>
         <div class="col-md-4">
-            <form>
-                <div class="form-group">
-                    <label for="newBurger">What's your burger?</label>
+            <form class="form-group">
+                <div>
+                    <label for="newBurger">What' s your burger?</label>
                     <textarea class="form-control" id="newBurger" rows="3"></textarea>
                 </div>
-                <button type="button" class="btn btn-success" id="include">Get Grillin!</button>
+                <button type="submit" class="btn btn-success" id="include">Get Grillin!</button>
             </form>
         </div>
         <div class="offset-md-4"></div>
     </div>
     <div class="row">
         <div class="col-md-4">
-            <h3>Burger Offerings:</h3>
-            {{#each burgers}} {{#unless devoured}}
-            <div class="card shadow-lg">
-                <div class="card-body">
-                    <p>{{burger_name}}</p>>
-                    <button type="button" class="btn btn-danger" id="devour">Devour It!</button>
+            <h2>Burger Offerings:</h4>
+                {{#each burgers}} {{#unless devoured}}
+                <div class="card shadow-lg mt-2 mb-2 bg-info text-white">
+                    <div class="card-body">
+                        <h5>{{burger_name}}</h5>
+                        <button type="button" class="btn btn-danger" id="devour" data-id="{{id}}" data-devoured="{{devoured}}">Devour It!</button>
+                    </div>
                 </div>
-            </div>
-            {{/unless}} {{/each}}
+                {{/unless}} {{/each}}
         </div>
         <div class="col-md-4">
 
         </div>
         <div class="col-md-4">
-            <h3>Burgers Eaten:</h3>
+            <h2>Burgers Eaten:</h2>
             {{#each burgers}} {{#if devoured}}
-            <div class="card shadow-lg">
+            <div class="card shadow-lg mt-2 mb-2 bg-info text-white">
                 <div class="card-body">
-                    <p>{{burger_name}}</p>>
-                    <button type="button" class="btn btn-danger" id="devour">Devour It!</button>
+                    <h5>{{burger_name}}</h5>
                 </div>
             </div>
             {{/if}} {{/each}}

@@ -60,7 +60,7 @@ var orm = {
 
         console.log(query);
 
-        connection.query(query, vals, function (err, data) {
+        connection.query(query, val, function (err, data) {
             if (err) {
                 throw err;
             }
@@ -69,10 +69,10 @@ var orm = {
         });
     },
     updateOne: function (table, objColVals, condition, cb) {
-        var query = `update ${table}`;
-        query += `set`;
+        var query = ` update ${table}`;
+        query += ` set `;
         query += objToSql(objColVals);
-        query += `where`;
+        query += ` where `;
         query += condition;
 
         console.log(query);
